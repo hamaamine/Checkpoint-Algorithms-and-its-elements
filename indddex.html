@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkpoint Algorithms and its elements</title>
+    <script> 
+        function analyzeSentence() {
+    const sentence = prompt("Enter a sentence ending with a point: ");
+
+    // Ensure the sentence ends with a period
+    if (!sentence.endsWith('.')) {
+        console.log("The sentence must end with a point.");
+        return;
+    }
+
+    // Initialize counters
+    let length = 0;
+    let wordCount = 0;
+    let vowelCount = 0;
+
+    const vowels = 'aeiouAEIOU'; // Define vowels
+
+    // Iterate over each character in the sentence
+    for (let char of sentence) {
+        length++; // Count each character
+
+        // Check for vowels
+        if (vowels.includes(char)) {
+            vowelCount++;
+        }
+
+        // Check for spaces to count words
+        if (char === ' ') {
+            wordCount++;
+        }
+    }
+
+    // Since the last word is not followed by a space, we need to count it
+    wordCount++; // Add one for the last word before the period
+
+    // Print the results
+    console.log("Length of the sentence:", length);
+    console.log("Number of words in the sentence:", wordCount);
+    console.log("Number of vowels in the sentence:", vowelCount);
+}
+
+// Call the function
+analyzeSentence();
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
